@@ -1,0 +1,175 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: #f8f8f8;
+  }
+  
+  /* Global style */
+  :root{--bs-blue: #3763f4;--bs-indigo: #6610f2;--bs-purple: #6f42c1;--bs-pink: #dc3dcb;--bs-red: #dc3545;--bs-orange: #fd7e14;--bs-yellow: #ffc107;--bs-green: #19f5aa;--bs-teal: #06a0b2;--bs-cyan: #06a0b2;--bs-black: #000;--bs-white: #fff;--bs-gray: #4e5d78;--bs-gray-dark: #343a40;--bs-gray-100: #f5f6f8;--bs-gray-200: #e9ecef;--bs-gray-300: #dee2e6;--bs-gray-400: #ced4da;--bs-gray-500: #adb5bd;--bs-gray-600: #4e5d78;--bs-gray-700: #495057;--bs-gray-800: #343a40;--bs-gray-900: #2d2d2d;--bs-primary: #3763f4;--bs-secondary: #dc3dcb;--bs-success: #19f5aa;--bs-info: #06a0b2;--bs-warning: #ffc107;--bs-danger: #dc3545;--bs-light: #f5f6f8;--bs-dark: #27262e;--bs-primary-rgb: 55, 99, 244;--bs-secondary-rgb: 220, 61, 203;--bs-success-rgb: 25, 245, 170;--bs-info-rgb: 6, 160, 178;--bs-warning-rgb: 255, 193, 7;--bs-danger-rgb: 220, 53, 69;--bs-light-rgb: 245, 246, 248;--bs-dark-rgb: 39, 38, 46;--bs-white-rgb: 255, 255, 255;--bs-black-rgb: 0, 0, 0;--bs-body-color-rgb: 255, 255, 255;--bs-body-bg-rgb: 45, 44, 56;--bs-font-sans-serif: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;--bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;--bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));--bs-body-font-family: var(--bs-font-sans-serif);--bs-body-font-size:1rem;--bs-body-font-weight: 400;--bs-body-line-height: 1.6;--bs-body-color: #fff;--bs-body-bg: #2d2c38;--bs-border-width: 1px;--bs-border-style: solid;--bs-border-color: #dee2e6;--bs-border-color-translucent: rgba(0, 0, 0, 0.175);--bs-border-radius: 1rem;--bs-border-radius-sm: 1rem;--bs-border-radius-lg: 1rem;--bs-border-radius-xl: 1rem;--bs-border-radius-2xl: 2rem;--bs-border-radius-pill: 50rem;--bs-link-color: #3763f4;--bs-link-hover-color: #2c4fc3;--bs-code-color: #dc3dcb;--bs-highlight-bg: #fff3cd}
+  .bg-primary-light{background:rgba(31,80,243,.6) !important}
+  .bg-secondary-light{background:rgba(216,39,197,.6) !important}
+  .bg-success-light{background:rgba(10,234,158,.6) !important}
+  .bg-info-light{background:rgba(5,138,153,.6) !important}
+  .bg-semi-white{background:rgba(255,255,255,.4) !important}
+  .card{border-radius: 25px; border: 0px;}
+  .btn{border-radius: 25px;}
+  .btn-secondary{background-color: #dc3dcb;border-color: #dc3dcb;}
+  .btn-secondary:hover{background-color: #dc3dcb;border-color: #dc3dcb;}
+  .text-primary{--bs-text-opacity: 1;color:rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important}
+  .text-secondary{--bs-text-opacity: 1;color:rgba(var(--bs-secondary-rgb), var(--bs-text-opacity)) !important}
+  .text-success{--bs-text-opacity: 1;color:rgba(var(--bs-success-rgb), var(--bs-text-opacity)) !important}
+  .text-info{--bs-text-opacity: 1;color:rgba(var(--bs-info-rgb), var(--bs-text-opacity)) !important}
+  .text-warning{--bs-text-opacity: 1;color:rgba(var(--bs-warning-rgb), var(--bs-text-opacity)) !important}
+  .text-danger{--bs-text-opacity: 1;color:rgba(var(--bs-danger-rgb), var(--bs-text-opacity)) !important}
+  .text-light{--bs-text-opacity: 1;color:rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important}
+  .text-dark{--bs-text-opacity: 1;color:rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important}
+  .text-black{--bs-text-opacity: 1;color:rgba(var(--bs-black-rgb), var(--bs-text-opacity)) !important}
+  .text-white{--bs-text-opacity: 1;color:rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important}
+
+  /* Main section */
+  
+  .main {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .main .title h3 {
+    font-size: 2.3rem;
+    font-weight: 300;
+    margin: 0.8rem 0;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .reveal {
+    opacity: 0;
+  }
+  
+  .reveal:hover {
+    opacity: 0.2;
+  }
+  
+  /* Upload box */
+  .upload-box {
+    font-size: 0.8rem;
+    color: #666666;
+    cursor: pointer;
+    width: 16rem;
+    height: 10rem;
+    background: rgb(65, 60, 60);
+    border: 0.1rem dashed #838388;
+    border-radius: 0.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem 0 2rem 0;
+  }
+  
+  .upload-box.dragover {
+    /* background-color: grey; */
+    color: #eeeeee;
+    border: 0.1rem solid rgb(0, 120, 212);
+    box-shadow: inset 0 0 0 0.1rem rgb(0, 120, 212);
+  }
+  
+  .upload-box:hover {
+    border-color: rgb(0, 120, 212);
+  }
+  
+  .upload-box #image-preview {
+    max-width: 14rem;
+    max-height: 8rem;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  #image-result {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-height: 20rem;
+  }
+  
+  #image-box {
+    position: relative;
+    width: auto;
+    float: left;
+    margin-bottom: 2rem;
+  }
+  
+  #image-display {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-height: 20rem;
+  }
+  
+  #image-display.loading {
+    filter: brightness(30%);
+  }
+  
+  #pred-result {
+    color: white;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  #pred-probability {
+    color: white;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  #pred-probability::after {
+    content: " %";
+  }
+  
+  #loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    margin: 0 auto;
+  }
+  
+  /* Animation */
+  #spinner {
+    box-sizing: border-box;
+    stroke: #cccccc;
+    stroke-width: 3px;
+    transform-origin: 50%;
+    animation: line 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite,
+      rotate 1.6s linear infinite;
+  }
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(450deg);
+    }
+  }
+  @keyframes line {
+    0% {
+      stroke-dasharray: 2, 85.964;
+      transform: rotate(0);
+    }
+    50% {
+      stroke-dasharray: 65.973, 21.9911;
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dasharray: 2, 85.964;
+      stroke-dashoffset: -65.973;
+      transform: rotate(90deg);
+    }
+  }
+  

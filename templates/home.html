@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<div class="container py-5">
+    <div class="card bg-white">
+        <div class="container p-3">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="#" class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none" style="color:#000; font-weight: 600; font-size: 30px;">
+                    {{ session.Username }}
+                </a>
+                <div class="col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"></div>
+                <div class="text-end">
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href="{{url_for('home')}}" class="nav-link px-2 text-dark">Home</a></li>
+                        <li><a href="{{url_for('about')}}" class="nav-link px-2 text-dark">About</a></li>
+                        {% if session.logged_in %}
+                        <li><a href="{{url_for('logout')}}" class="nav-link px-2 text-dark">Logout</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="mx-auto my-3" style="max-width: 900px;">
+            <div class="row row-cols-1 row-cols-md-2 d-flex justify-content-center">
+                <div class="col mb-4">
+                    <div class="card bg-dark">
+                        <div class="card-body text-center px-4 py-5 px-md-5">
+                            <p class="fw-bold text-primary card-text mb-2">IMAGE</p>
+                            <h5 class="fw-bold text-white card-title mb-3">Orange Ripeness Classification using images</h5>
+                            <a href="{{ url_for('image_classify') }}">
+                                <button class="btn btn-primary btn-sm text-white py-2 px-3" type="button">
+                                Click Here</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="card bg-dark">
+                        <div class="card-body text-center px-4 py-5 px-md-5">
+                            <p class="fw-bold text-info card-text mb-2">WEB CAM</p>
+                            <h5 class="fw-bold text-white card-title mb-3">Orange Ripeness Classification using webcam</h5>
+                            <a href="{{ url_for('webcam_classify') }}">
+                                <button class="btn btn-primary btn-sm text-white py-2 px-3" type="button">
+                                Click Here</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

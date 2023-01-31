@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Orange Ripeness Classification App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style-main.css') }}"></link>
+</head>
+
+<body style="background-image: url('../static/images/oranges.jpg');background-repeat:no-repeat; background-size:cover;background-position:center;">
+    <section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-sm-center h-100">
+				<div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-12">
+					<div class="card shadow-lg mt-5">
+						<div class="card-body">
+							<h1 class="fs-4 card-title fw-bold mt-4 mb-4 text-center">REGISTER PAGE</h1>
+							{% from "utils/_formhelpers.html" import render_field %}
+							<form action="" method="post">
+								<div class="row mb-3">
+                                    <label for="username" class="col-lg-3 col-md-3 col-sm-12 col-form-label">Username</label>
+									<div class="col-lg-9 col-md-9 col-sm-12">
+										{{render_field(form.username, class="form-control")}}
+									</div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="password" class="col-lg-3 col-md-3 col-sm-12 col-form-label">Password</label>
+									<div class="col-lg-9 col-md-9 col-sm-12">
+										{{render_field(form.password, class="form-control")}}
+									</div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="email" class="col-lg-3 col-md-3 col-sm-12 col-form-label">Email</label>
+									<div class="col-lg-9 col-md-9 col-sm-12">
+										{{render_field(form.email, class="form-control")}}
+									</div>
+                                </div>
+								<div class="align-items-center d-flex">
+									<button type="submit" class="btn btn-primary btn-md ms-auto mt-3 mb-3 py-2 px-3">
+										Register	
+									</button>
+								</div>
+							</form>
+							{% if message %}
+								<p class="text-center"><strong>Message:</strong> {{ message }}</p>
+							{% endif %}
+						</div>
+						<div class="card-footer py-3 border-0">
+							<div class="text-center">
+								Have an account? <a href="{{url_for('login')}}" class="text-dark">Login</a>
+							</div>
+							<div class="text-center text-muted">
+								Copyright &copy; 2023
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+
+</html>

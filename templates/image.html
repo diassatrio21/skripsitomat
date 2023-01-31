@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<section class="p-5">
+    <div class="container text-center">
+        <div class="card bg-info">
+            <div class="container p-3">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <a href="#" class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none" style="color:#000; font-weight: 600; font-size: 30px;">
+                        {{ session.Username }}
+                    </a>
+                    <div class="col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"></div>
+                    <div class="text-end">
+                        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                            <li><a href="{{url_for('home')}}" class="nav-link px-2 text-dark">Home</a></li>
+                            <li><a href="{{url_for('about')}}" class="nav-link px-2 text-dark">About</a></li>
+                            {% if session.logged_in %}
+                            <li><a href="{{url_for('logout')}}" class="nav-link px-2 text-dark">Logout</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="card px-5 py-3 my-3">
+                        <h3>Drag and Drop Image</h3>
+                        <div class="panel mx-auto">
+                            <input id="file-upload" class="hidden" type="file" accept="image/x-png,image/gif,image/jpeg" />
+                            <label for="file-upload" id="file-drag" class="upload-box">
+                            <div id="upload-caption">Drop/load <b>image</b> in here</div>
+                            <img id="image-preview" class="hidden" />
+                            </label>
+                        </div>
+                        <div style="margin-bottom: 2rem;">
+                            <input type="button" value="Prediction" class="btn btn-primary text-white py-2 px-3" onclick="submitImage();" />
+                            <span style="margin: 0px 4px"></span>
+                            <input type="button" value="Clear" class="btn btn-primary text-white py-2 px-3" onclick="clearImage();" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="card px-5 py-3 my-3">
+                        <h3>Result Prediction</h3>
+                        <div id="image-box">
+                            <img id="image-display" />
+                            <div id="pred-result" class="hidden"></div>
+                            <div id="pred-probability" class="hidden" style="visibility: visible;"></div>
+                            <svg id="loader" class="hidden" viewBox="0 0 32 32" width="32" height="32">
+                            <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
